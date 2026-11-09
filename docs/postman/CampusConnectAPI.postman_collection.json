@@ -1,0 +1,188 @@
+{
+  "info": {
+    "_postman_id": "5886a054-5590-4d22-b51a-e7bfa941ba9e",
+    "name": "CampusConnect API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60039177",
+    "_collection_link": "https://go.postman.co/collection/60039177-5886a054-5590-4d22-b51a-e7bfa941ba9e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Health check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Success",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"student@campusconnect.test\",\r\n  \"password\": \"Campus26\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/sessions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "sessions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login wrong password",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"student@campusconnect.test\",\r\n  \"password\": \"WrongPass99\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/sessions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "sessions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login unknown email",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"nobody@campusconnect.test\",\r\n  \"password\": \"Campus26\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/sessions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "sessions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login empty body",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/sessions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "sessions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Me with token",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Me no token",
+      "request": {
+        "auth": {
+          "type": "bearer"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/users/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
