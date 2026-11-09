@@ -123,4 +123,4 @@ Other answers: unknown route is 404 `{"error":"Not found."}`, a crash is 500 `{"
 | Member | Name | GitHub | What I did in Part 2 |
 |---|---|---|---|
 | 1 | Gyan Dave B. Tangapa | tangapagyandave-sudo | Set up `server/` (Express, dotenv, CORS, JSON). Built `POST /api/v1/sessions` with validation, bcryptjs password check, 1-hour JWT and the hashed demo user. |
-| 2 | Kent T. Baloyos | Built `GET /api/v1/users/me` with the token middleware, the 404 and 500 handlers, `docs/API-SPEC.md` (with the events design), the Postman collection and the Postman screenshots. Reviewed the Member 1 pull request. |
+| 2 | Kent T. Baloyos | Itsken-the-average |Built `GET /api/v1/users/me` with the token middleware, the 404 and 500 handlers, `docs/API-SPEC.md` (with the events design), the Postman collection and the Postman screenshots. Reviewed the Member 1 pull request. |
