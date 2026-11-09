@@ -72,3 +72,54 @@ Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png
 ## What our group learned (leader writes this last)
 
 > Our group learned how to create a responsive, mobile-first website using CSS Flexbox, Grid, and media queries. We also learned the importance of testing different screen sizes, using GitHub for collaboration, and making sure the layout works properly on mobile phones, tablets, and desktops.
+
+
+## How to run?
+
+backend
+> # Part 2: Express backend login
+
+## How to run
+
+You need two terminals open at the same time.
+
+**Terminal 1: backend (folder `server`)**
+
+```bash
+cd server
+npm install
+copy .env.example .env
+npm start
+```
+
+You should see `API running on http://localhost:3000`.
+
+**Terminal 2: front end (project root)**
+
+```bash
+npm install
+copy .env.example .env
+npm run dev
+```
+
+Open http://localhost:5173. The health check is http://localhost:3000/api/v1/health and must return `{"status":"ok"}`.
+
+The real `.env` files are never committed. Only the two `.env.example` files (with fake values) are in the repo.
+
+## API summary
+
+| Method | Path | Success | Errors |
+|---|---|---|---|
+| GET | `/api/v1/health` | 200 `{"status":"ok"}` | none |
+| POST | `/api/v1/sessions` | 200 `{token, user}` | 400 missing fields, 401 `Invalid email or password.` |
+| GET | `/api/v1/users/me` | 200 user (needs `Authorization: Bearer <token>`) | 401 `Not logged in.` |
+
+Other answers: unknown route is 404 `{"error":"Not found."}`, a crash is 500 `{"error":"Something went wrong."}`. Full details are in `docs/API-SPEC.md`. The Postman collection is in `docs/postman/CampusConnect.postman_collection.json`.
+
+**Demo account:** `student@campusconnect.test` / `Campus26` (name: Demo Student)
+
+## Who did what (Part 2)
+
+| Member | Name | GitHub | What I did in Part 2 |
+|---|---|---|---|
+| 1 | Gyan Dave B. Tangapa | tangapagyandave-sudo | Set up `server/` (Express, dotenv, CORS, JSON). Built `POST /api/v1/sessions` with validation, bcryptjs password check, 1-hour JWT and the hashed demo user. |
