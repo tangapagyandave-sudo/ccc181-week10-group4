@@ -1,0 +1,38 @@
+/* Part 2 additions. The Part 1 CSS and class names remain in place. */
+.login-layout > * {
+  min-width: 0;
+}
+
+.auth-message {
+  padding: 1rem;
+  margin: 0 0 1rem;
+  border: 1px solid currentColor;
+  border-radius: var(--radius);
+  overflow-wrap: anywhere;
+}
+
+.auth-message--error {
+  color: var(--error);
+  background: var(--surface);
+}
+
+.welcome-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.welcome-card .login-card__title,
+.auth-email {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.welcome-card .btn {
+  min-height: 3rem;
+}
+
+.btn:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
